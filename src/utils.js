@@ -2,7 +2,6 @@ import { campaignList } from './actions/index.js';
 import { store } from './reducers/store.jsx';
 
 export function saveHistoryToStore(campaignListData,Id,type,statevalue){
-	debugger
     var allCampaignList = campaignListData.data.slice()
     var selectedId = campaignListData.selectedId;
     for (var i =0; i < allCampaignList.length; i++)
