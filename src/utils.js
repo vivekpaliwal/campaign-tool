@@ -67,7 +67,7 @@ export var CMPN = {
 		},
 		removeItem:function(key){
 			var data = JSON.parse(localStorage.getItem('CMPN'));
-			var keysArray = data ? Object.keys(data) : []; //if user wants to login from landing page
+			var keysArray = data ? Object.keys(data) : [];
 			for(var x in keysArray){
 				if(keysArray[x] === key){
 					delete(data[key]);
