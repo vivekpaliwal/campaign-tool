@@ -26,7 +26,8 @@ export class CampaignList extends React.Component{
     e.stopPropagation();
     utils.saveHistoryToStore(this.props.campaignList,Id,"comment",this.state.comment)
     this.setState({
-      commentPopup:false
+      commentPopup:false,
+      comment:""
     })
   }
   handlePlayPause = (e,Id) => {
@@ -67,7 +68,7 @@ export class CampaignList extends React.Component{
       <div className={"comment-module "+ (this.state.commentPopup ? "active" : "")}>
         <div onClick={(e) => this.handleComment(e)} className="module-overlay"></div>
           <div className="comment-section-module">
-            <textarea onChange={(e) => this.setState({comment: e.target.value})} placeholder="write comment about campaign" className="comment-section"></textarea>
+            <textarea value={this.state.comment} onChange={(e) => this.setState({comment: e.target.value})} placeholder="write comment about campaign" className="comment-section"></textarea>
             <div onClick={(e) => this.saveComment(e, this.props.data.id)} className="add-comment submit-button">add comment</div>
           </div>
       </div>
