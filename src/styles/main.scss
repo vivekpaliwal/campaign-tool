@@ -274,11 +274,10 @@ body{
 		}
 	}
 	.campaign-name{
-	    margin-top: 5px;
     	font-size: 14px;
     	font-weight: bold;
     	padding-left: 30px;
-    	margin-bottom: 40px;
+    	margin: 0px 0px 40px 0px;
     	white-space: nowrap;
 	    text-overflow: ellipsis;
 	    overflow: hidden;
@@ -307,7 +306,6 @@ body{
 		    top: 0;
 		    bottom: 0;
 		    left: 33px;
-		    z-index: 0;
 		}
 		i{
 			position: relative;
