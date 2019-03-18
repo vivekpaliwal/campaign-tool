@@ -10,7 +10,7 @@ export function saveHistoryToStore(campaignListData,Id,type,statevalue){
      	switch (type) {
 		    case "delete":
 		    	allCampaignList.splice(i,1);
-		    	selectedId = "";
+		    	selectedId = selectedId === Id ? "" : selectedId;
 		    break;
 		    case "comment":
 		    	allCampaignList[i].history.push({

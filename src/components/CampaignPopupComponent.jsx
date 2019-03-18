@@ -14,27 +14,31 @@ export class CampaignPopupComponent extends React.Component{
   }
   handlepopup = (e) => {
     e.preventDefault();
-   store.dispatch(campaignActivePopup({
+    store.dispatch(campaignActivePopup({
       activeCampaignPopup:false
     }));
   }
   saveCampaign = (e) => {
     e.preventDefault();
-    if(this.state.campaignName === "" || this.state.userName === ""){
-      this.setState({error:"please fill out this field"});
-      return false;
-    }
     var Id = this.props.editCampaignById;
     if(Id){
-          utils.saveHistoryToStore(this.props.campaignList,Id,"rename",this.state.campaignName)
+        if(this.state.campaignName === ""){
+          this.setState({error:"please fill out this field"});
+          return false;
+        }
+        utils.saveHistoryToStore(this.props.campaignList,Id,"rename",this.state.campaignName)
     }else{
+      if(this.state.campaignName === "" || this.state.userName === ""){
+        this.setState({error:"please fill out this field"});
+        return false;
+      }
       var campaignListData = this.props.campaignList.data
       campaignListData.push({
           "campaignName":this.state.campaignName,
           "userName":this.state.userName,
           "history":[{
             "type":"create",
-            "value":"created"
+            "value":"Created"
           }],
           "id":new Date().getTime(),
           "getTime":new Date().getTime()

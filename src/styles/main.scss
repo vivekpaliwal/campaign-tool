@@ -104,6 +104,9 @@ body{
 	    margin: 10px 0px;
 	    outline: none;
 	}
+	textarea{
+		height: 90px;
+	}
 	.campaign-tag{
 		font-size: 14px;
 	    height: 35px;
@@ -153,7 +156,9 @@ body{
 	.campaign-list-detail{
 		height: calc(100vh - 110px);
 		background:#fff;
-		overflow-y: scroll;
+		overflow-y: auto;
+	    box-sizing: border-box;
+    	border-right: 1px solid #f5f5f5;
 		@include bp(768px){
 			height: auto;
 		};
@@ -251,10 +256,10 @@ body{
 }
 .history-container{
 	background:#f8fbff;
-	padding-left: 40px;
+	padding: 0px 0px 20px 40px;
 	box-sizing: border-box;
 	height: calc(100vh - 110px);
-    overflow-y: scroll;
+    overflow-y: auto;
     @include bp(768px){
    		padding-left: 10px;
 	};
@@ -282,7 +287,7 @@ body{
 	.history-detail{
 	    padding-left: 25px;
     	padding-top: 30px;
-    	font-size: 12px;
+    	font-size: 11px;
     	line-height: 16px;
     	position: relative;
     	&:last-child{
@@ -311,6 +316,8 @@ body{
 		}
 		.history-content{
 			padding-left: 30px;
+		    width: 90%;
+    		box-sizing: border-box;
 		}
 		.fa-plus,.fa-comment,.fa-pencil-alt{
 			padding: 5px;
@@ -330,12 +337,15 @@ body{
 	.name{
 		color: #428ee2;
 	}
+	.play-text{
+		text-transform: capitalize;
+	}
 	.comment{
-		font-size: 13px;
+		font-size: 12px;
 	    white-space: nowrap;
     	text-overflow: ellipsis;
     	overflow: hidden;
-    	width: 160px;
+    	width: 100%;
 	}
 }
 .scrollbar-style{
@@ -355,7 +365,7 @@ body{
         border:1px solid #428ee2;
     }
     &::-webkit-scrollbar-track{
-        border:1px gray #e2e2e2;
+        border:1px gray ;
         border-radius:10px;
     }
 }

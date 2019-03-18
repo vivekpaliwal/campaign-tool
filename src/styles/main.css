@@ -95,7 +95,7 @@
   }
 
   .col-md-4 {
-    width: 33.33333%;
+    width: 33.333333%;
   }
 
   .col-md-5 {
@@ -288,6 +288,9 @@ body {
   margin: 10px 0px;
   outline: none;
 }
+.campaign-container textarea {
+  height: 90px;
+}
 .campaign-container .campaign-tag {
   font-size: 14px;
   height: 35px;
@@ -341,7 +344,9 @@ body {
 .campaign-container .campaign-list-detail {
   height: calc(100vh - 110px);
   background: #fff;
-  overflow-y: scroll;
+  overflow-y: auto;
+  box-sizing: border-box;
+  border-right: 1px solid #f5f5f5;
 }
 @media screen and (max-width: 768px) {
   .campaign-container .campaign-list-detail {
@@ -447,10 +452,10 @@ body {
 
 .history-container {
   background: #f8fbff;
-  padding-left: 40px;
+  padding: 0px 0px 20px 40px;
   box-sizing: border-box;
   height: calc(100vh - 110px);
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 @media screen and (max-width: 768px) {
   .history-container {
@@ -481,7 +486,7 @@ body {
 .history-container .history-detail {
   padding-left: 25px;
   padding-top: 30px;
-  font-size: 12px;
+  font-size: 11px;
   line-height: 16px;
   position: relative;
 }
@@ -509,6 +514,8 @@ body {
 }
 .history-container .history-detail .history-content {
   padding-left: 30px;
+  width: 90%;
+  box-sizing: border-box;
 }
 .history-container .history-detail .fa-plus, .history-container .history-detail .fa-comment, .history-container .history-detail .fa-pencil-alt {
   padding: 5px;
@@ -527,12 +534,15 @@ body {
 .history-container .name {
   color: #428ee2;
 }
+.history-container .play-text {
+  text-transform: capitalize;
+}
 .history-container .comment {
-  font-size: 13px;
+  font-size: 12px;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-  width: 160px;
+  width: 100%;
 }
 
 .scrollbar-style::-webkit-scrollbar {
@@ -551,7 +561,7 @@ body {
   border: 1px solid #428ee2;
 }
 .scrollbar-style::-webkit-scrollbar-track {
-  border: 1px gray #e2e2e2;
+  border: 1px gray;
   border-radius: 10px;
 }
 

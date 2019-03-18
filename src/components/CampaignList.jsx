@@ -67,13 +67,19 @@ export class CampaignList extends React.Component{
       <div className={"comment-module "+ (this.state.commentPopup ? "active" : "")}>
         <div onClick={(e) => this.handleComment(e)} className="module-overlay"></div>
           <div className="comment-section-module">
-            <textarea onChange={(e) => this.setState({comment: e.target.value})} placeholder="add comment" className="comment-section"></textarea>
+            <textarea onChange={(e) => this.setState({comment: e.target.value})} placeholder="write comment about campaign" className="comment-section"></textarea>
             <div onClick={(e) => this.saveComment(e, this.props.data.id)} className="add-comment submit-button">add comment</div>
           </div>
       </div>
       <div className={"campaign-list-container col-md-12 "+(this.props.campaignList.selectedId === this.props.data.id ? "selected" : "")} onClick={(e)=>this.selectList(e,this.props.data.id)}>
         <div className="campaign-name col-md-7">
-          <div className="count inline-block-v-middle"><span> {this.props.count + 1} </span></div><div className="inline-block-v-middle campaign-name-time"><span className="campaign-name-text">{this.props.data.campaignName}</span><div className="time">Created at {Hr}:{Min} {Mer}</div></div>
+          <div className="count inline-block-v-middle">
+            <span> {this.props.count + 1} </span>
+          </div>
+          <div className="inline-block-v-middle campaign-name-time">
+            <span className="campaign-name-text">{this.props.data.campaignName}</span>
+              <div className="time">Created at {Hr}:{Min} {Mer}</div>
+          </div>
         </div>
         <div className="col-md-5 text-center action-buttons">
           <div className="" onClick={(e) => this.handlePlayPause(e, this.props.data.id)}>

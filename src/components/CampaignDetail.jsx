@@ -86,13 +86,13 @@ class HistoryComponent extends React.Component{
             historyData.push(<div className="history-detail top-inline-container"><div ><i className="fas fa-plus"></i></div><div className="history-content">Campaign <span className="creat bold">{this.props.data.history[i].value}</span> <div>by <span className="name">{this.props.data.userName}</span></div></div></div> )
             break;
           case "comment":
-            historyData.push(<div className="history-detail top-inline-container"><div><i className="fas fa-comment"></i></div><div className="history-content"><span className="bold">Comment </span><span>added</span><div>by <span className="name">{this.props.data.userName}</span></div><div className="bold comment">{this.props.data.history[i].value}</div></div></div> )
+            historyData.push(<div className="history-detail top-inline-container"><div><i className="fas fa-comment"></i></div><div className="history-content"><span className="bold">Comment </span><span>Added</span><div>by <span className="name">{this.props.data.userName}</span></div><div className="bold comment">{this.props.data.history[i].value}</div></div></div> )
           break;
           case "play":
-            historyData.push(<div className="history-detail top-inline-container"><div><i className="fas fa-play-circle "></i></div><div className="history-content">Campaign <span className="bold">{this.props.data.history[i].value}</span><div>by <span className="name">{this.props.data.userName}</span></div></div></div>)
+            historyData.push(<div className="history-detail top-inline-container"><div><i className="fas fa-play-circle "></i></div><div className="history-content">Campaign <span className="bold play-text">{this.props.data.history[i].value}</span><div>by <span className="name">{this.props.data.userName}</span></div></div></div>)
           break;
           case "pause":
-            historyData.push(<div className="history-detail top-inline-container"><div><i className="col-md-3 fas fa-pause-circle "></i></div><div className="history-content">Campaign <span className="bold">{this.props.data.history[i].value}</span><div>by <span className="name">{this.props.data.userName}</span></div></div></div>)
+            historyData.push(<div className="history-detail top-inline-container"><div><i className="col-md-3 fas fa-pause-circle "></i></div><div className="history-content">Campaign <span className="bold play-text">{this.props.data.history[i].value}</span><div>by <span className="name">{this.props.data.userName}</span></div></div></div>)
           break;
           case "rename":
             historyData.push(<div className="history-detail top-inline-container"><div><i className="fas fa-pencil-alt"></i></div><div className="history-content"><span className="">Campaign </span><span className="bold">Renamed</span><div>by <span className="name">{this.props.data.userName}</span></div><div className="bold comment"><strike>{this.props.data.history[i].oldValue}</strike> <span>{this.props.data.history[i].value}</span></div></div></div> )
