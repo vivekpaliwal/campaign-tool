@@ -1,0 +1,192 @@
+@mixin bp($point){
+	@media screen and (max-width:$point) {
+		@content;
+	}
+}
+h1, h2, h3, h4, h5, h6 {
+	&.reset{
+		 margin: 0;
+		 padding: 0;
+		 font-weight: inherit;
+		 font-family: inherit;
+		 font-size: inherit;
+		 line-height: inherit;
+		 letter-spacing: inherit;
+		 text-transform: inherit;
+	 }
+}
+.disabled{
+	opacity:0.5;
+	cursor: default;
+	pointer-events: none;
+}
+
+.abs-pos {
+	position:absolute;
+}
+
+.fixed-pos {
+	position:fixed;
+}
+
+.relative-pos {
+	position:relative;
+}
+
+.full-width {
+	width:100%;
+}
+
+.clearfix {
+	clear:both
+}
+
+.float-left {
+	float:left;
+}
+
+.float-right {
+	float:right;
+}
+
+.uppercase{
+	text-transform:uppercase;
+}
+
+.cursor-pointer{
+	cursor:pointer;
+	touch-action: manipulation;
+}
+
+.hide{
+	display:none;
+}
+
+.hide-render{
+	opacity: 0;
+}
+
+.hide-important{
+	display: none !important;
+}
+.hide-in-desktop{
+	display: none !important;
+}
+@include bp(768px){
+	.hide-in-desktop{
+		display: block !important;
+	}
+};
+.padding-10{
+	padding:10px;
+}
+.padding-20{
+	padding:20px;
+}
+
+.m-t-5 {
+	margin-top:5px;
+}
+
+.m-t-10 {
+	margin-top:10px;
+}
+.m-r-10 {
+	margin-right:10px;
+}
+
+.m-b-5{
+	margin-bottom: 5px;
+}
+.m-l-5{
+	margin-left: 5px;
+}
+.m-b-10 {
+	margin-bottom:10px;
+}
+
+.m-t-20 {
+	margin-top:20px;
+}
+.m-b-20 {
+	margin-bottom:20px;
+}
+.m-l-10 {
+	margin-left:10px;
+}
+.m-l-20 {
+	margin-left:20px;
+}
+
+.bold {
+	font-weight: 600;
+}
+.semi-bold {
+	font-weight: 200;
+}
+
+.text-center{
+	text-align:center;
+}
+.col-centered{
+	float: none;
+	margin: auto;
+}
+
+.text-right{
+	text-align:right;
+}
+
+.text-left{
+	text-align:left;
+}
+
+.no-scroll{
+	overflow: hidden;
+}
+.border-box{
+	box-sizing: border-box;
+}
+.no-wrap{
+	white-space: nowrap;
+}
+
+a,a:link,a:visited,a:hover{
+		color:inherit;
+		text-decoration:none;
+
+		&.underline-text{
+			@extend .underline-text;
+		}
+}
+.top-inline-container{
+		& > div{
+				display:inline-block;
+				vertical-align : top;
+		}
+}
+.bottom-inline-container{
+		& > div{
+				display:inline-block;
+				vertical-align : bottom;
+		}
+}
+
+.inline-block-v-middle{
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.inline-block{
+	display: inline-block;
+}
+.clearfix-pseudo{
+	&:after{
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+.text-decoration{
+	text-decoration: underline;
+}
